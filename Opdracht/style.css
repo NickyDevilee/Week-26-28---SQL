@@ -1,0 +1,52 @@
+/*Nicky Devilee | 99047338
+Bol4 applicatieontwikkelaar*/
+
+.ContainerGameInfo{
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+	width: 1850px;
+	margin: auto;
+}
+
+.GameInfo{
+	margin-bottom: 25px;
+	width: 350px;
+	border-bottom: 5px solid red;
+	text-align: center;
+}
+
+.GameKlik{
+	color: black;
+}
+
+.Foto{
+	height: 300px;
+	width: 300px;
+}
+
+.Titel{
+	text-decoration: underline;
+}
+
+.formulierToevoegen{
+	border: 1px solid black;
+	text-align: center;
+}
+
+.GameData{
+	text-align: center;
+}
+
+.PlanningsItem{
+	border: 2.5px solid black;
+}
+
+.ContainerPlanningInfo{
+	text-align: center;
+	width: 50%;
+	margin: auto;
+}
+
+.PlanningsData{
+	text-align: center;
+}
