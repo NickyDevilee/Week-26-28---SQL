@@ -18,13 +18,16 @@ Bol4 applicatieontwikkelaar -->
 		<?php 
 		$result = GetAllPlanning($conn);
 		foreach ($result as $rij) {
+		$resultaatSpel = GetGame($rij['NaamSpel'], $conn);
 		?>
 		<div class="PlanningsItem">	
-			<h4 class="PlanningsItemTitel"><i class="fas fa-gamepad"></i> - <?php echo $rij['NaamSpel']; ?></h4>
+			<img class="GameFoto" src="img/<?php echo $resultaatSpel['image']; ?>">
+			<h4 class="PlanningsItemTitel"><i class="fas fa-gamepad"></i> - <?php echo $resultaatSpel['name']; ?></h4>
 			<h4 class="PlanningsItemTitel"><i class="fas fa-clock"></i> - <?php echo $rij['Starttijd']; ?></h4>
 			<h4 class="PlanningsItemTitel"><i class="fas fa-user-friends"></i> - <?php echo $rij['Spelers']; ?></h4>
-			<h4 class="PlanningsItemTitel"><i class="fas fa-user-graduate"></i> - <?php echo $rij['Uitlegger']; ?></h4>
-			<a href="edit.php?id=<?php echo $rij['ID']; ?>"><i class="fas fa-user-cog"></i> Aanpassen</a> <br>
+			<h4 class="PlanningsItemTitel"><i class="fas fa-user-graduate"></i> - <?php echo $rij['Uitlegger'] . ' - ' . $resultaatSpel['explain_minutes']; ?> min.</h4>
+			<h4 class="PlanningsItemTitel"><i class="fas fa-stopwatch"></i> - <?php echo $resultaatSpel['play_minutes']; ?> min.</h4>
+			<a href="edit.php?id=<?php echo $rij['ID']; ?>"><i class="fas fa-user-cog"></i> Aanpassen</a> 
 			<a href="delete.php?id=<?php echo $rij['ID']; ?>"><i class="fas fa-eraser"></i> Verwijderen</a>
 		</div>
 		<?php 

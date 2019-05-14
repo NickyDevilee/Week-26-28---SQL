@@ -51,4 +51,26 @@ function GetPlanning($id,$conn){
 	$result = $query->fetch();
 	return $result;
 }
+
+function InsertPlanning($conn,$spel,$starttijd,$spelers,$uitlegger){
+	$query = $conn->prepare('INSERT INTO `Planning` (ID, NaamSpel, Starttijd, Spelers, Uitlegger) VALUES (null, :NaamSpel, :Starttijd, :Spelers, :Uitlegger)');
+	$query->execute([':NaamSpel' => $spel, ':Starttijd' => $starttijd, ':Spelers' => $spelers , ':Uitlegger' => $uitlegger]);
+	$message = "Succesvol toegevoegd!";
+	echo "<script type='text/javascript'>alert('$message'); window.location='Planning.php';</script>";
+}
+
+function InsertPlanningAangepast($id, $conn,$spel,$starttijd,$spelers,$uitlegger){
+	$query = $conn->prepare('UPDATE `Planning` SET NaamSpel = :NaamSpel, Starttijd = :Starttijd, Spelers = :Spelers, Uitlegger = :Uitlegger WHERE ID=:id');
+	$query->execute([ ':id' => $id, ':NaamSpel' => $spel, ':Starttijd' => $starttijd, ':Spelers' => $spelers , ':Uitlegger' => $uitlegger]);
+	$message = "Succesvol aangepast!";
+	echo "<script type='text/javascript'>alert('$message'); window.location='Planning.php';</script>";
+}
+
+function DeletePlanning($conn, $id){
+	$query = $conn->prepare("DELETE FROM Planning WHERE id = :id");
+	$query->execute([':id' => $id]);
+	$message = "Succesvol verwijderd!";
+	echo "<script type='text/javascript'>alert('$message'); window.location='Planning.php';</script>";
+}
 ?>
+

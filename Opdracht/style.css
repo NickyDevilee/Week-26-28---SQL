@@ -39,6 +39,8 @@ Bol4 applicatieontwikkelaar*/
 
 .PlanningsItem{
 	border: 2.5px solid black;
+	height: 215px;
+	margin-top: 5px;
 }
 
 .ContainerPlanningInfo{
@@ -49,4 +51,11 @@ Bol4 applicatieontwikkelaar*/
 
 .PlanningsData{
 	text-align: center;
+}
+
+.GameFoto{
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin-left: 10px;
 }
