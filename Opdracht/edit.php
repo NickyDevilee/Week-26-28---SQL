@@ -43,7 +43,7 @@
 	<div class="formulierToevoegen">
 		<form method="post" action="edit.php?id=<?php echo $result['ID']; ?>">
 		 <fieldset>
-		  <legend>Planning toevoegen:</legend>
+		  <legend>Planning aanpassen:</legend>
 			<i class="fas fa-dice"></i> Spel: <select name="Spel">
 				<?php 
 				$resultaat = GetGames($conn);

@@ -25,6 +25,7 @@ $resultaatSpel = GetGame($result['NaamSpel'], $conn);
 	?>
 
 <div class="PlanningsData">
+	<h1>Planning verwijderen:</h1>
 	<p><i class="fas fa-dice"></i> Spel: <?php echo $resultaatSpel['name']; ?></p>
 	<p><i class="fas fa-clock"></i> Starttijd: <?php echo $result['Starttijd']; ?></p>
 	<p><i class="fas fa-users"></i> Spelers: <?php echo $result['Spelers']; ?></p>
